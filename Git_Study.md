@@ -7,15 +7,18 @@
 - VScode 확장으로 설치, 왼쪽 사이드바 원 안에 줄기 아이콘으로 사용  
 - VScode 환경에서 변경사항, 브랜치, 리모트, 히스토리 등 Git을 편하게 확인  
 
+# git 설정
+- git config --list //깃 설정 목록 보기
+- git config --global user.name [깃 유저명] //깃 유저명 설정
+- git config --global user.email [깃 이메일] //깃 이메일 설정
+- cat ~/.gitconfig //깃 설정 한눈에 보기
+
 # git 작업원리
 - 개발자A가 Local Repository에서 작업  
 - 작업한 내용을 Commit & Push하여 Server Repository에 업로드  
 - 개발자B는 A가 작업한 소스를 Pull하여 Local Repository에 받아옴  
 
 # git 기본명령
-- git config --list //깃 설정 목록으로 보기  
-- git config --global user.name [깃허브유저명] //깃 유저명 설정  
-- git config --global user.email [깃허브이메일] //깃 이메일 설정  
 - git init //깃 초기화  
 - git add --all //업로드할 파일 준비  
 - git commit -am "메시지 작성" //업로드할 파일 커밋으로 묶어주기  
