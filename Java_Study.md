@@ -111,3 +111,113 @@ Hello.class 파일의 바이트코드를 검증
 - 부모 클래스의 메소드를 자식 클래스에서 용도에 맞게 재정의하는 것
 - 오버로딩과 다르게 매개변수가 동일해야함
 - 부모 클래스의 메소드와 같거나 넓은 범위의 접근 제어자만 사용 가능
+
+# 자료형
+## 배열 Array
+- 자료형의 집합을 의미
+- 배열의 길이는 고정
+- 배열의 길이를 생성 시 값을 넣으면서 생성
+- 또는 배열의 길이를 생성 시 지정하고 값을 삽입 
+
+**숫자형 배열**     
+int[] odds = {1, 3, 5, 7, 8};
+
+**문자형 배열**     
+String[] weeks = {"월", "화", "수", "목", "금", "토", "일"};
+
+**문자형 배열 다른 방식**   
+String[] weeks = new String[7];     
+weeks[0] = "월";    
+weeks[1] = "화";    
+weeks[2] = "수";    
+weeks[3] = "목";    
+weeks[4] = "금";    
+weeks[5] = "토";    
+weeks[6] = "일";    
+
+**배열을 for문과 같이 사용**
+- Array.length를 따로 변수에 저장해서 쓰는 이유는 바로 안정성
+- 반복문 안에서 길이가 변경되면 문제가 발생할 수도 있다!
+
+String[] weeks = {"월", "화", "수", "목", "금", "토", "일"};    
+String len = weeks.length;  
+for (int i=0; i<len; i++) {     
+&emsp; System.out.println(weeks[i]);   
+}
+
+## 리스트 List
+- 리스트는 배열과 비슷한 자바의 자료형
+- 배열과 차이점은 크기가 정해져 있지 않고 동적으로 변한다는 것
+- 리스트는 크기가 정해져 있지 않아 원하는 만큼의 값을 담을 수 있다.
+
+**리스트 불러오기**     
+import java.util.ArrayList;
+
+**리스트 생성**     
+ArrayList pitches = new ArrayList();
+
+**리스트 메소드**
+- add() 리스트에 값 삽입    
+pitches.add("138");
+
+- add() 리스트 첫번째 위치에 값 삽입    
+pitches.add(0, "138");
+
+- get() 리스트 원소 반환    
+pitches.get(0);
+
+- size()
+//리스트 원소의 수 리턴     
+pitches.size();
+
+- contains() 리스트 안에 해당 항목이 있는지 판별하여 결과를 true/false로 리턴      
+pitches.contains("138");
+
+- remove(객체) 리스트에서 객체에 해당하는 항목을 삭제하고 삭제 결과를 true/false로 리턴      
+pitches.remove("129");
+
+- remove(인덱스) 리스트에서 인덱스에 해당하는 항목을 삭제하고 삭제된 항목을 리턴       
+pitches.remove(0);
+
+**제네릭스**
+- 버전5 이후부터 사용 권고
+- 어떤 객체를 포함하는지 명확하게 표현
+- 인텔리제이에서 제네릭스를 아쓰면 warning이 표시됨
+
+ArrayList<String> pitches = new ArrayList<String>();    
+ArrayList<String> pitches = new ArrayList<>();
+
+- 뒷 부분의 자료형은 생략이 가능하므로 2번째 방식을 선호
+- 인텔리제이에서는 생략안하면 경고
+
+**aList 메소드**    
+- 이미 존재하는 배열    
+String[] data = {"123", "456", "789"};
+
+- Arrays 클래스 불러오기    
+import java.util.Arrays;
+
+- Arrays 클래스의 asList 메소드 사용하여 ArrayList 생성     
+ArrayList<String> pitches = new ArrayList<>(Arrays.asList(data));
+
+- 다른 방식으로 직접 자료형을 여러개 전달하여 생성 가능     
+ArrayList<String> pitches = new ArrayList<>(Arrays.asList("138", "129", "142"));
+
+**리스트 모든 원소 한줄로 출력**    
+- 리스트 생성   
+ArrayList<String> pitches = new ArrayList<>(Arrays.asList("138", "129", "142"));    
+
+- String.join("구분자", 리스트객체) 사용하여 원소를 문자열로 합치기     
+String result = String.join(",", pitches);
+
+
+**리스트 정렬**
+- sort 메소드는 자바8 버전부터 사용 가능
+- Comparator 클래스 불러오기    
+import java.util.Comparator;
+
+- 오름차순 정렬     
+pitches.sort(Comparator.naturalOrder());
+
+- 내림차순 정렬     
+pitches.sort(Comparator.reverseOrder());
