@@ -1,11 +1,11 @@
 # git 설치
 **git setup**  
-- VScode 에디터 설정 -> 충돌 문제 발생 시 VScode로 볼 수 있음  
-- 배쉬 온리X 윈도우 프롬프트 -> 편의를 위해 선택  
+- VScode 에디터 설정 -> 충돌 문제 발생 시 VScode로 볼 수 있음
+- 배쉬 온리X 윈도우 프롬프트 -> 편의를 위해 선택
 
 **GitLens**  
-- VScode 확장으로 설치, 왼쪽 사이드바 원 안에 줄기 아이콘으로 사용  
-- VScode 환경에서 변경사항, 브랜치, 리모트, 히스토리 등 Git을 편하게 확인  
+- VScode 확장으로 설치, 왼쪽 사이드바 원 안에 줄기 아이콘으로 사용
+- VScode 환경에서 변경사항, 브랜치, 리모트, 히스토리 등 Git을 편하게 확인
 
 # git 설정
 - git config --list //깃 설정 목록 보기
@@ -14,18 +14,25 @@
 - cat ~/.gitconfig //깃 설정 한눈에 보기
 
 # git 작업원리
-- 개발자A가 Local Repository에서 작업  
-- 작업한 내용을 Commit & Push하여 Server Repository에 업로드  
-- 개발자B는 A가 작업한 소스를 Pull하여 Local Repository에 받아옴  
+- 개발자A가 Local Repository에서 작업
+- 작업한 내용을 Commit & Push하여 Server Repository에 업로드
+- 개발자B는 A가 작업한 소스를 Pull하여 Local Repository에 받아옴
 
 # git 기본명령
-- git init //깃 초기화  
-- git add --all //업로드할 파일 준비  
-- git commit -am "메시지 작성" //업로드할 파일 커밋으로 묶어주기  
-- git remote add origin [깃허브주소] //서버와 로컬 통로 연결  
-- git push -u origin master //서버에 업로드  
-- git pull //서버에서 받아오기  
-- git clone //깃허브에 만든 저장소 클론하기  
+- git init //깃 초기화
+- git add //업로드할 파일 준비
+- git commit //업로드할 파일 커밋으로 묶어주기
+- git remote add origin [깃허브주소] //서버와 로컬 통로 연결
+- git push -u origin master //서버에 업로드
+- git pull //서버에서 받아오기
+- git clone //깃허브에 만든 저장소 클론하기
+
+# git 커밋 옵션
+- git commit -m "메시지" // 메시지를 남기는 옵션
+- git commit -m "메시지1    
+메시지2     
+메시지3" //커밋 메시지를 여러줄 쓰는 방법
+- git commit -am "메시지" //add & commit을 동시에 하는 옵션, 새로운 파일 추가할 때는 사용 불가능
 
 # origin이란?
 - 원격 저장소의 기본 이름  
@@ -45,7 +52,8 @@
 - 직접 해결 -> 자동으로 해결이 안될 경우 직접 코드를 수정
 
 # git flow & git issue 실습 과정
-**실습 과정 기록 -> https://blog.naver.com/ceron3804/222812092254**  
+**실습 과정 기록**  
+https://blog.naver.com/ceron3804/222812092254
 
 **1. git flow**  
 git flow 설치 유무 확인  
