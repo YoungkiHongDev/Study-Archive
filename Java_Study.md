@@ -62,10 +62,8 @@ Hello.class 파일의 바이트코드를 검증
 
 # JAVA 버전 변경
 - 새로운 버전의 JDK를 설치
-- 자동 등록된 자바 환경 변수 삭제
-- 시스템 변수에 변수명 JAVA_HOME, 변수값 원하는 버전 JDK 경로 등록
-- 시스템 변수에 변수명 CLASSPATH, 변수값 .;%JAVA_HOME%\lib\tools.jar 등록
-- 시스템 변수 path에 변수값 %JAVA_HOME%\bin 등록
+- 시스템 변수 Path에 자동 등록되어 있는 자바 환경 변수 삭제
+- 시스템 변수 Path에 원하는 JDK의 bin 폴더 경로 등록
 - java -version으로 버전 확인
 
 # JAVA 개발 툴
