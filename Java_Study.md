@@ -289,3 +289,11 @@ ArrayList<String> pitches = new ArrayList<>(Arrays.asList("138", "129", "142"));
 2. HashTableMap : HashMap과 비교하여 Thread-safe가 보장된다.
 3. LinkedHashMap : 클래스 내부의 LinkedList로 입력 순서까지 저장한다. 
 4. TreeMap : 이진 트리를 기반으로 하여, 트리에 키를 저장한다.
+
+## 생성자 Constructor
+- 클래스명과 동일한 이름을 가진 메소드
+- 리턴 타입을 정의하지 않는다. (void도 안쓴다!)
+- 객체가 생성될 때 자동으로 호출
+- new 키워드가 사용될 때 호출
+- 만약, 생성자를 구현하지 않으면 컴파일러가 기본 생성자(디폴트 생성자)를 추가한다.
+- 메소드를 오버로딩하는 것처럼 생성자도 오버로딩 할 수 있다.
