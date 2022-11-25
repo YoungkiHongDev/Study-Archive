@@ -322,3 +322,12 @@ ArrayList<String> pitches = new ArrayList<>(Arrays.asList("138", "129", "142"));
 - Ex) (매개변수) -> {함수 구현부} 또는 () -> {함수 구현}
 - 작성할 실행문이 한줄이면 괄호를 생략 가능하다.
 - 하지만 리턴문이라면 생략할 수 없다.
+
+# System.out.println()은 무엇인가?
+- JAVA에서 콘솔창에 변수나 문자열을 출력하는 명령어
+- public static final void printstream out; 을 가르키는 코드이다.
+- 시스템 클래스가 초기화되면서 이 정적변수에 객체가 대입된다.
+- 대입되기 전까지의 out은 참조타입만 가진 NULL이며, 이것은 하나의 static 객체로 재정의 된다.
+- 즉, printstream의 객체를 정적변수 out에 넣어서 static 객체로 만든 것이다.
+- 그래서 System.out이 가능하게 되고 이것은 클래스처럼 보이지만 이 자체로 하나의 객체라고도 볼 수 있다.
+- 요약하자면 System.out은 간접 참조와 같고 다른 언어에서 import나 메소드를 찾아가는 과정과 매우 비슷하다.
