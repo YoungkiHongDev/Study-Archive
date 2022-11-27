@@ -331,3 +331,9 @@ ArrayList<String> pitches = new ArrayList<>(Arrays.asList("138", "129", "142"));
 - 즉, printstream의 객체를 정적변수 out에 넣어서 static 객체로 만든 것이다.
 - 그래서 System.out이 가능하게 되고 이것은 클래스처럼 보이지만 이 자체로 하나의 객체라고도 볼 수 있다.
 - 요약하자면 System.out은 간접 참조와 같고 다른 언어에서 import나 메소드를 찾아가는 과정과 매우 비슷하다.
+
+# 자바 ArrayList와 비교한 Array의 장점
+데이터의 크기를 미리 정해야하고 추가 및 삭제가 필요치 않을 경우 ArrayList보다는 Array가 유리하다.
+- 문법적으로 ArrayList보다 Array가 구현하기가 쉽다.
+- Array를 생성 시 메모리가 미리 할당되어 연속된 메모리 공간에 위치하므로 메모리 관리가 용이하다.
+- 메모리 공간에 위와 같은 장점이 있어서 데이터를 읽는 속도가 빠르다.
