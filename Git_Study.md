@@ -193,3 +193,11 @@ VScode를 현재 프로젝트로 빠르게 오픈
 - rollback 메시지를 남기고 commit 생성  
 - 소스를 rollback commit과 똑같이 수정  
 - push 하면 돌아가기 성공 (reject 당하면 -uf 옵션 또는 +브랜치로 push)  
+
+# git 파일 삭제
+- git rm [파일명]
+- 파일 삭제 작업 후 Staging Area에 add한 것처럼 올라간다.
+- git commit으로 파일 삭제에 대한 메시지를 남기고 git push로 작업을 완료한다.
+- 여러 파일을 삭제하고 싶다면?
+- 파일 개수가 적으면? git rm [파일명1] [파일명2]
+- 파일 개수가 많고 확장자가 같다면? git rm *.[확장자]
