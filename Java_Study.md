@@ -174,3 +174,27 @@ public static final void printstream out; 을 가르키는 코드이다.
 문법적으로 ArrayList보다 Array가 구현하기가 쉽다.
 Array를 생성 시 메모리가 미리 할당되어 연속된 메모리 공간에 위치하므로 메모리 관리가 용이하다.
 메모리 공간에 위와 같은 장점이 있어서 데이터를 읽는 속도가 빠르다.
+
+# Enum
+예를들어, int형 변수에 0~6이라는 정해진 값만 할당하고 싶은데 int형은 0~6 뿐만 아니라 다른 숫자도 할당이 가능했다.  
+그래서 이러한 문제점을 타입에 안전하지 않은 No Type-Safety라고 불렀으며, 이를 해결하기 위해 Enum이 등장했다.  
+사용 방법은 class 키워드 대신에 enum을 넣고 생성할 수 있다.  
+
+```Java
+public enum Day {
+    SUNDAY,
+    MONDAY,
+    TUESDAY,
+    WEDNESDAY,
+    THURSDAY,
+    FRIDAY,
+    SATURDAY
+}
+```
+
+Day enum 안에 상수로 넣을 값을 넣으면, Day는 오직 안에 들어가있는 값만 할당된다.  
+
+Enum 타입의 특징을 정리하면 다음과 같다.  
+- Enum은 타입에 대해 안전하다. (Type-Safety)
+- 미리 정의된 Enum 변수 안의 상수만 대입할 수 있다.
+- Enum은 switch문에서 사용이 가능하다. (switch문에서 String을 사용할 수 있는 JDK 7이상일 때)
