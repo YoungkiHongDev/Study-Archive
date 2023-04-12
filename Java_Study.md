@@ -160,6 +160,53 @@ OOP 특징 중 캡슐화와 관련된다.
 - 작성할 실행문이 한줄이면 괄호를 생략 가능하다.
 - 하지만 리턴문이라면 생략할 수 없다.
 
+> 람다식의 조건
+인터페이스가 단 하나의 추상 메소드를 가진, 함수형 인터페이스일 경우에만 람다식으로 표현 할 수 있다.
+
+```Java
+//람다식: ( 매개변수 ) -> { 처리 내용 }
+
+//추상 메소드
+public interface Calculable {
+    void calculate(int x, int y);
+}
+
+//인터페이스의 익명 구현 객체
+new Calculable() {
+    @Override
+    public void calculate(int x, int y) { 처리 내용 }
+}
+
+//위의 익명 구현 객체를 람다식으로 표현
+(x, y) -> { 처리 내용 };
+
+//람다식은 인터페이스의 익명 구현 객체 -> 인터페이스 타입의 매개변수에 대입 가능
+//이전 방식의 메소드
+public void action(Calculable calculable) {
+    int x = 1;
+    int y = 2;
+    calculable.calculate(x, y);
+}
+
+//람다식을 사용한 방식의 메소드
+action( (x, y) {
+    int sum = x + y;
+    System.out.println(sum);
+});
+
+//매개변수가 없는 람다식 (실행문이 2개 이상)
+() -> {
+    실행문;
+    실행문;
+}
+
+//매개변수가 없는 람다식 (실행문이 1개면 중괄호 생략)
+() -> 실행문
+
+//매개변수가 1개, 실행문이 1개인 람다식 (소괄호, 중괄호 생략)
+x -> 실행문 
+```
+
 # System.out.println()은 무엇인가?
 JAVA에서 콘솔창에 변수나 문자열을 출력하는 명령어이다.
 public static final void printstream out; 을 가르키는 코드이다.
@@ -198,3 +245,23 @@ Enum 타입의 특징을 정리하면 다음과 같다.
 - Enum은 타입에 대해 안전하다. (Type-Safety)
 - 미리 정의된 Enum 변수 안의 상수만 대입할 수 있다.
 - Enum은 switch문에서 사용이 가능하다. (switch문에서 String을 사용할 수 있는 JDK 7이상일 때)
+
+# 스트림 Stream
+자바 8버전에서 추가된 기능이다.  
+배열 또는 컬렉션 인터페이스의 클래스를 여러개 조합하여 원하는 결과를 얻을 수 있다.  
+Reactor를 잘 사용하기 위해서는 스트림을 잘 이해할 필요가 있다.
+
+## 스트림의 특징
+- 함수형 프로그래밍으로 간결하고 가독성이 좋아진다.
+- 쉽게 병렬 처리를 수행할 수 있다.
+
+## 스트림 생성 방법
+1. 컬렉션 스트림
+2. 기본타입형 스트림
+3. 문자열 스트림
+4. 병렬 스트림
+5. 스트림 연결
+6. Stream.builder()
+7. Stream.generate()
+8. Stream.iterate()
+9. and other things
