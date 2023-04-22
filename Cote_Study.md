@@ -1,12 +1,15 @@
-/* 캐릭터 */
+# Character
+```
 //캐릭터 변수가 숫자인지 확인
 Chracter.isDigit(value);
 
 //캐릭터 변수인 숫자를 정수형으로 변환
 int num = Character.getNumericValue(value);
+```
 
 
-/* 문자열 */
+# String
+```
 //입력문
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 String s = br.readLine();
@@ -47,9 +50,11 @@ str.replaceAll("[^a-zA-Z]", "") //영문자를 제외한 문자들 제거
 //문자열 배열처럼 쓰기 (캐릭터로 한글자씩)
 String s = "Hello";
 s.toCharArray();
+```
 
 
-/* 배열 */
+# Array
+```
 //배열 오름차순 정렬
 Arrays.sort(arr);
 
@@ -79,9 +84,11 @@ Collections.frequency(Arrays.asList(arr), "value");
 
 //배열의 값 전부를 괄호와 쉼표 빼고 숫자와 공백만 출력하기
 Arrays.toString(arr).replaceAll("[\\[\\],]", "") //[1, 2, 3, 4, 5] -> 1 2 3 4 5
+```
 
 
-/* 리스트 */
+# List
+```
 //어레이리스트 생성
 ArrayList<Integer> list = new ArrayList<>();
 
@@ -96,9 +103,11 @@ list.toString();
 
 //리스트 중복값 개수 세기
 Collections.frequency(list, "value");
+```
 
 
-/* 해시맵 */
+# HashMap
+```
 //해시맵 생성
 HashMap<Character, Integer> map = new HashMap<>();
 
@@ -107,17 +116,21 @@ map.put(key, value);
 
 //해시맵 벨류값 얻기
 map.get(key);
+```
 
 
-/* 트리셋 */
+# TreeSet
+```
 //트리셋 생성
 TreeSet<Integer> tset = new TreeSet<>();
 
 //트리셋 내림차순으로 저장하도록 생성
 TreeSet<Integer> tset = new TreeSet<>(Collections.reverseOrder());
+```
 
 
-/* 스택 */
+# Stack
+```
 //스택 생성
 Stack<Integer> stack = new Stack<>();
 
@@ -132,9 +145,11 @@ stack.peek();
 
 //스택 안에 값이 들어있나 확인
 stack.contains(value);
+```
 
 
-/* 기타등등 */
+# etc.
+```
 //최대 최소 값 구하기
 Math.max(a, b) //2개 중 높은 값
 Math.min(a, b) //2개 중 낮은 값
@@ -147,3 +162,4 @@ Math.max(Math.max(a, b), Math.max(c, d)) //4개 중 높은 값
 20	21	22	23	24
 30	31	32	33	34
 40	41	42	43	44
+```
