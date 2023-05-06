@@ -135,3 +135,34 @@ out.println("</body></html>");
 <h1>NUM2 ${param.num2}</h1>
 <h1>SUM ${Integer.parseInt(param.num1) + Integer.parseInt(param.num2)}</h1>
 ```
+
+# PRG 패턴
+웹 MVC 구조에서 자주 사용되는 패턴으로 POST 방식과 Redirect를 결합한 패턴이다.  
+PRG 패턴의 대표적인 예시로는 게시판이 있다.  
+반복적인 POST 호출을 방지할 수 있는 장점이 있다.
+
+1. 브라우저에서 POST 방식으로 데이터의 처리를 요청한다.
+2. Controller에서 데이터를 처리하고 브라우저에 Redirect할 주소를 응답한다.
+3. 브라우저는 이동할 주소를 받아서 GET 방식으로 서버를 호출한다.
+4. Controller는 GET 방식의 데이터를 처리 후 브라우저에 응답 메시지를 전송한다.
+
+# HttpServlet
+Servlet을 작성할 때 HTTP 프로토콜에 특화된 기능을 처리하기 위해 상속받는 클래스이다.  
+
+## HttpServlet 라이프 사이클
+1. 브라우저가 톰캣에 서블릿이 처리할 경로를 호출한다.
+2. 톰캣은 경로에 맞는 서블릿 클래스를 로딩하고 객체를 생성한다. 이 때, init() 메소드가 실행된다.
+3. 생성된 서블릿 객체가 요청 정보를 분석하여 파라미터를 HttpServletRequest 타입으로 전달받으며, 응답 처리에 필요한 정보는 HttpServletResponse 타입 객체로 전달받는다.
+4. 서블릿 내부에서 GET/POST 방식에 따라 doGet()/doPost() 메소드를 호출하며, 동일한 호출이 있을 경우 동일한 객체를 다시 호출하여 처리한다.
+5. 톰캣이 종료되면 destroy() 메소드를 호출한다.
+
+## HttpServletRequest 메소드
+- getParameter(): 쿼리 스트링에서 키를 이용하여 값을 얻는 메소드로 항상 결과가 String이라 null에 주의해야 한다.
+- getParameterValues(): 파라미터가 여러개 있는 경우에 사용하며, String[] 타입으로 반환된다.
+- setAttribute(): JSP로 전달할 데이터를 추가한다. 키(문자열)와 값(모든 타입)의 형태로 저장할 수 있다.
+- getRequestDispatcher(): RequestDispatcher 타입의 객체를 구할 수 있으며, 현재 요청을 다른 서블릿이나 JSP에게 전달한다.
+- forward(): RequestDispatcher의 메소드로 현재까지의 모든 응답은 무시하고 JSP가 작성하는 내용만 브라우저로 전달한다.
+- include(): RequestDispatcher의 메소드로 지금까지의 응답 내용과 JSP가 만든 내용을 브라우저로 전달한다. 실제 개발에서는 include 보다는 forward를 주로 사용한다.
+
+## HttpServletResponse 메소드
+- sendRedirect(): 브라우저에게 다른 주소로 가라는 응답 메시지를 전달한다. Location이라는 HTTP 헤더로 전달된다.
