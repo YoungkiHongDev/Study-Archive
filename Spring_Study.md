@@ -1,27 +1,7 @@
-# Spring이란?
+# Spring
 자바 엔터프라이즈 개발을 위한 오픈소스 경량 어플리케이션 프레임워크이다.
 프레임워크가 인프라 스트럭처를 제공하므로 개발자는 업무로직 개발에만 전념가능하다.
 스프링 프레임워크는 공통 프로그래밍 모델 및 Configuration 모델을 제공한다.
-
-# Spring Boot Devtools
-클래스를 변경하면 서버가 자동으로 재기동하는 툴로 스프링부트 개발시 도움을 주는 도구이다.
-
-# Live Reload++
-크롬 확장프로그램이며, 설치하면 브라우저를 새로고침할 필요 없이 변경 사항을 확인할 수 있게 해주는 도구이다.
-- https://chrome.google.com/webstore/detail/livereload%20%20/ciehpookapcdlakedibajeccomagbfab
-
-# Lombok
-자바 클래스에 Getter, Setter, 생성자 등을 자동으로 만들어주는 도구이다.
-- https://projectlombok.org/download
-
-compileOnly: 해당 라이브러리가 컴파일 단게에서만 필요한 경우에 사용한다.
-annotationProcessor: 컴파일 단계에서 어노테이션을 분석하고 처리하기 위해 사용한다.
-
-> Lombok Annotation
-
-@Getter : private 변수에 접근하기 위해서 사용, 변수값을 가져올 수 있다.
-@Setter : private 변수에 접근하기 위해서 사용, 변수값을 세팅할 수 있다.
-@RequiredArgsConstructor : 해당 속성을 필요로하는 생성자가 롬복에 의해 자동으로 생성된다. (final이 없는 속성은 생성자에 포함되지 않는다.), final을 쓰므로 Setter를 못쓰게 만들며, 의존성 주입(DI)시 사용된다.
 
 # Servlet
 Servlet은 자바 언어를 기반으로 웹 어플리케이션을 만들 때 사용하는 자바 클래스다.  
