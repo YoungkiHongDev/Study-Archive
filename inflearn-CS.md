@@ -115,6 +115,9 @@
 
 - Stack은 재귀적인 특징이 있어서 재귀함수로도 구현 가능
 
+## Q. Stack 2개를 이용한 Queue 구현 방법은?
+> Stack 2개로 enqueue()와 dequeue()를 각각 나눠서 구현한다. enqueue()를 구현할 Stack은 push()를 이용하여 데이터를 저장시키고, dequeue()를 구현할 Stack에 enqueue()를 구현한 Stack의 모든 데이터를 pop() 시키고 다시 push()로 저장하여 top에 가장 처음 저장된 데이터가 먼저 오도록 한다. 그러면 Queue를 구현한 것과 같이 순서대로 pop() 시킬 수 있다.
+
 # 운영체제
 # 데이터베이스
 # 네트워크
