@@ -118,6 +118,16 @@
 ## Q. Stack 2개를 이용한 Queue 구현 방법은?
 > Stack 2개로 enqueue()와 dequeue()를 각각 나눠서 구현한다. enqueue()를 구현할 Stack은 push()를 이용하여 데이터를 저장시키고, dequeue()를 구현할 Stack에 enqueue()를 구현한 Stack의 모든 데이터를 pop() 시키고 다시 push()로 저장하여 top에 가장 처음 저장된 데이터가 먼저 오도록 한다. 그러면 Queue를 구현한 것과 같이 순서대로 pop() 시킬 수 있다.
 
+- 시간복잡도는 enqueue()의 경우 O(1), dequeue()의 경우 비어있으면 채우고 진행하므로 O(n), 아니라면 O(1)이다.
+
+## Q. Queue 2개를 이용한 Stack 구현 방법은?
+> push 기능은 enqueue()를 이용하여 1번 Queue에 넣게 한다. pop 기능은 1번 Queue의 데이터가 하나 남을 때 까지 dequeue()하고 그 데이터들은 2번 Queue에 enqueue() 한다. 그리하면 가장 최근에 들어온 데이터만 1번 Queue에 남는다. 하나만 남은 데이터를 dequeue()하여 반환하면 pop이 완료된다. 그리고 다음 pop은 1번과 2번 Queue를 swap 시켜서 동작한다.
+
+- 시간복잡도는 push()의 경우 O(1), pop()의 경우 O(n)이다.
+
+## Q. Queue와 우선순위 큐 (priority queue)를 비교한다면?
+> Queue 자료구조는 먼저 넣은 데이터가 먼저 나오는 선입선출의 형태를 가진다. 하지만 우선순위 큐는 들어간 순서가 아닌 우선순위가 높은 데이터가 먼저 나온다.
+
 # 운영체제
 # 데이터베이스
 # 네트워크
