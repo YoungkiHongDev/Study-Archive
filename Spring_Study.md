@@ -1,17 +1,17 @@
 # 웹 프로그래밍 변화 과정
 1. HTML - 웹 프로그래밍의 시작, 정적인 화면을 구현할 수 있음
 2. Servlet - 데이터를 동적으로 가져오기 위한 환경을 구성하기 위해 Java 진영에서 사용, Java 안에서 HTML 사용
-3. JSP - 서블릿에서 벗어난 Java 개발자들이 좋아했음, HTML 안에서 Java 사용, HTML과 Java 코드 구분이 힘들어짐, 코드가 외부로 유출되어 보안 문제가 생김
+3. JSP - 서블릿에서 벗어난 Java 개발자들이 좋아했음, HTML 안에서 Java 사용, HTML과 Java 코드 구분이 힘들어짐, 코드가 외부로 유출되어 보안 문제가 생김, Spring Boot에서는 JSP 사용을 피하는 것을 권장하여 JSP를 Servlet으로 변환시켜주는 tomcat jasper 같은 dependency를 따로 제공하지 않아 수작업으로 넣어야 한다.
 4. MVC 패턴 - Front와 Backend를 분리, JSP를 Front로 분리하고 Servlet을 Backend로 사용함, controller/service/vo가 개발자마다 다른 문제가 생김
-5. MVC FrameWork - Spring 프레임워크 탄생
+5. MVC FrameWork - 이전의 Java 웹 개발의 문제점들을 해결하기 위해 Spring 프레임워크가 만들어졌고, Spring 설정의 불편함을 해소하기 위해 Spring Boot가 만들어졌다.
 
-# Spring
-자바 엔터프라이즈 개발을 위한 오픈소스 경량 어플리케이션 프레임워크이다.
-프레임워크가 인프라 스트럭처를 제공하므로 개발자는 업무로직 개발에만 전념가능하다.
-스프링 프레임워크는 공통 프로그래밍 모델 및 Configuration 모델을 제공한다.
+# DI/IoC
+Dependency만 있는 구조는 필요할 때마다 객체를 생성한다.
+예를들어, Class A가 Class B를 호출할 수 있는 구조가 있다면, 이 경우 A는 B에 의존한다고 할 수 있다.
 
-# Spring Boot
-스프링부트는 스프링을 기반으로 동작하는 애플리케이션을 복잡한 설정 없이 빠르게 작성할 수 있게 도와주는 도구이다.
+Dependency와 Injection 모두 있는 구조는 Spring이 Spring Container 안에 있는 객체를 필요로 하는 클래스에 주입한다.
+Spring이 구동될 때 @AutoWired 라는 Annotation을 사용한 곳을 찾아 Spring이 객체를 주입한다.
+IoC는 이 때 적용되는 개념으로 제어의 주체가 개발자가 아닌 Spring이 된 것을 말한다.
 
 # Servlet
 Servlet은 자바 언어를 기반으로 웹 어플리케이션을 만들 때 사용하는 자바 클래스다.  
@@ -30,6 +30,14 @@ Servlet은 웹 서버에서 실행되며, HTTP 요청에 대한 응답을 생성
 2. 데이터 처리: 요청된 데이터를 처리하고, 데이터베이스의 데이터를 검색한다.
 3. 비즈니스 로직 처리: 요청된 데이터를 기반으로 비즈니스 로직을 실행하고, 결과를 생성한다.
 4. 동적인 웹 페이지 생성: Servlet은 HTML, XML, JSON과 같은 동적인 컨텐츠를 생성하여 클라이언트에게 제공한다.
+
+# Spring
+자바 엔터프라이즈 개발을 위한 오픈소스 경량 어플리케이션 프레임워크이다.
+프레임워크가 인프라 스트럭처를 제공하므로 개발자는 업무로직 개발에만 전념가능하다.
+스프링 프레임워크는 공통 프로그래밍 모델 및 Configuration 모델을 제공한다.
+
+# Spring Boot
+스프링부트는 스프링을 기반으로 동작하는 애플리케이션을 복잡한 설정 없이 빠르게 작성할 수 있게 도와주는 도구이다.
 
 # Servlet과 Spring의 차이점
 Servlet은 HTTP 요청과 응답을 처리하기 위해 기본적인 API를 제공한다. 하지만 개발자가 스레드를 관리하고 요청을 응답처리하고 세션을 관리하는 등 세부 사항들을 직접 처리해야 한다는 불편함이 있다.
@@ -118,7 +126,7 @@ MVC 패턴은 Model, View, Controller의 세가지 요소로 나누어 어플리
 이것은 마치 싱글톤 패턴을 사용하는 것과 같다.  
 그래서 스프링 컨테이너를 싱글톤 레지스트리라고도 부른다.
 
-# Dependency Injection
+# Dependency Injection (DI)
 Controller, Service 등 2개 이상의 클래스가 있을 때,  
 A 클래스가 변경되면 B 클래스가 영향을 받을 경우 두 클래스 사이에 의존 관계가 형성되었다고 할 수 있다.  
 
