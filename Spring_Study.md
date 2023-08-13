@@ -13,6 +13,28 @@ Dependency와 Injection 모두 있는 구조는 Spring이 Spring Container 안�
 Spring이 구동될 때 @AutoWired 라는 Annotation을 사용한 곳을 찾아 Spring이 객체를 주입한다.
 IoC는 이 때 적용되는 개념으로 제어의 주체가 개발자가 아닌 Spring이 된 것을 말한다.
 
+# JSP/Thymeleaf
+Spring Boot의 공식 문서를 보면 자동으로 지원하는 템플릿 엔진에 FreeMarker, Groovy, Thymeleaf, Velocity가 포함되어 있지만 JSP는 빠져있으며, JSP는 제한이 있다고 설명하고 있다. 그래서 Spring initializr에서도 Dependencies에서 JSP가 나오지 않는다.
+
+JSP에는 문제점이 있는데, JSP를 사용하면 JSP에서 커넥션을 만들어서 DB에 접근할 수 있으므로 보안상의 취약점이 생길 수 있다.
+그렇다면 Thymeleaf만 공부하면 되는 것 아닐까? 라고 생각할 수 있지만 국내에 이미 만들어져있는 프로젝트들은 JSP가 사용된 경우가 많아서 JSP 또한 공부할 필요가 있다.
+
+# Jar/War & 내장톰캣/외장톰캣
+프로젝트를 패키징하는 방식에 Jar, War의 2가지 방식이 있다.
+
+**War로 패키징하는 경우**
+- View에 JSP를 사용한다.
+- 외장톰캣으로 배포한다.
+
+**Jar로 패키징하는 경우**
+- View에 Thymeleaf를 사용한다.
+- 내장톰캣으로 배포한다.
+
+외장톰캣을 설치해보면 webapp 폴더 아래에 WEB-INF 폴더가 존재한다.
+프로젝트에서 JSP를 사용하려면 외장톰캣과 같이 webapp 아래에 WEB-INF를 두게 된다.
+또한 War로 패키징하고 내부를 확인해도 같은 구조를 가졌음을 확인할 수 있다.
+하지만 Jar로 패키징하면 webapp과 WEB-INF 폴더를 볼 수 없으므로 다른 구조를 가져, 외장톰캣으로 배포를 할 수 없다.
+
 # Servlet
 Servlet은 자바 언어를 기반으로 웹 어플리케이션을 만들 때 사용하는 자바 클래스다.  
 Servlet은 웹 서버에서 실행되며, HTTP 요청에 대한 응답을 생성한다.  
