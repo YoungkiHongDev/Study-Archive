@@ -204,3 +204,9 @@ git commit으로 파일 삭제에 대한 메시지를 남기고 git push로 작�
 git mv [원래 파일명] [바꿀 파일명]
 ```
 파일명이 변경이 안될 경우 한번도 git add 한 적이 없는 파일이므로 staging 후 수행하기
+
+# .gitignore 걸러진 파일 확인
+```
+git status --ignored
+```
+git bash 환경에서 사용 시 gitignore 내용에 따라 걸러진 파일들이 붉은색으로 보인다.
