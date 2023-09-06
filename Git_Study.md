@@ -210,3 +210,8 @@ git mv [원래 파일명] [바꿀 파일명]
 git status --ignored
 ```
 git bash 환경에서 사용 시 gitignore 내용에 따라 걸러진 파일들이 붉은색으로 보인다.
+
+# 마지막 커밋 메시지 변경
+```
+git commit --amend -m "변경 커밋 메시지"
+```
