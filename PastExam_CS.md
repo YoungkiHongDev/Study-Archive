@@ -159,13 +159,35 @@ TCP 통신은 3단계의 과정을 거친다.
 3. SYN-ACK 패킷을 받은 클라이언트가 연결이 성공했다고 알리기 위해 서버에게 ACK 패킷을 보낸다.
 3-way handshake 과정은 연결의 신뢰성을 보장하기 위해 사용되고, 오류 제어 및 혼잡 제어와 관련이 있다.
 
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+
+    Client->>Server: SYN
+    Server->>Client: SYN-ACK
+    Client->>Server: ACK
+```
+
 ## 4-way handshake
 4-way handshake는 TCP 프로토콜로 통신을 마치면 그 연결을 종료시키는 과정이다.
 4-way handshake 과정은 다음과 같다.
-1. 클라이언트가 서버로 FIN 패킷을 보낸다.
-2. 서버는 FIN 패킷을 받고 응답으로 ACK 패킷을 클라이언트로 보낸다.
-3. 서버가 FIN 패킷을 보내면 클라이언트는 응답으로 ACK 패킷을 서버로 보낸다.
-4. 서버가 ACK 패킷을 받으면 연결이 종료된다.
+1. 클라이언트가 연결을 종료하기 위해 서버로 FIN 패킷을 보낸다.
+2. 서버는 FIN 패킷을 받고, 연결을 종료하기 전 데이터를 처리하기 시작하고 ACK 패킷을 클라이언트로 보낸다.
+3. 서버가 데이터 처리를 끝내고 연결을 종료하기 위해 FIN 패킷을 클라이언트로 보낸다.
+4. 클라이언트는 FIN 패킷을 보낸 것이 맞는지 서버에게 확인하기 위해 ACK 패킷을 서버로 보낸다.
+5. 서버가 ACK 패킷을 받으면 연결이 완전히 종료된다.
+
+```mermaid
+sequenceDiagram
+    participant Client
+    participant Server
+
+    Client->>Server: FIN
+    Server->>Client: ACK
+    Server->>Client: FIN
+    Client->>Server: ACK
+```
 
 ## HTTP (Hyper Text Transfer Protocol)
 HTTP는 웹 상에서 정보를 주고받을 수 있는 통신 프로토콜이다.
