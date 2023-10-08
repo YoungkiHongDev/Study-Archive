@@ -93,13 +93,43 @@ userData["email"] = "jason@gmail.com"
 // userData의 key로 이루어진 배열 생성
 let userArray = Object.keys(userData) //["name", "age", "gender"]
 
-// email이라는 key를 가졌는지 여부를 확인
+// name이라는 key를 가졌는지 여부를 확인
 userArray.includes("name") //true
 ```
 
 - Object.values() : 객체 프로퍼티들의 value만 가져와서 배열에 담아주는 메소드, 객체 프로퍼티 값들은 어떠한 데이터도 입력될 수 있으므로 key처럼 문자열 데이터로만 가져오지 않는다.
 
 ```javascript
-//u userData의 value로 이루어진 배열 생성
+// userData의 value로 이루어진 배열 생성
 let userArray = Object.values(userData) //["Jason", 25 , "male"]
 ```
+
+# 함수
+어떠한 기능을 수행하거나 계산을 수행하는 코드의 집합이다. 함수를 사용하려면 호출하는 방법과 함수 선언의 종류를 알아야한다.
+
+```javascript
+// 자바스크립트 함수의 형태
+const sum = function() {
+    console.log(10+10);
+};
+
+// 자바스크립트 함수의 호출
+sum();
+```
+
+function()은 자바스크립트의 함수라는 것을 알려주는 키워드이다. 함수를 실행시키면 {} 안의 코드가 실행된다.
+
+# 함수 연결
+html 태그에 자바스크립트 함수를 연결시키는 방법은 속성을 사용하면 된다.
+
+```javascript
+<script>
+        const output = function() {
+            console.log('function run');
+        };
+</script>
+
+<button onclick="output()">버튼</button>
+```
+
+예제와 같이 script 태그 안에 함수를 만들어 놓고, onclick과 같은 이벤트 속성을 사용하여 연결하면 함수를 원하는 때에 호출시킬 수 있다. 예제에서는 버튼을 클릭하면 함수가 호출되고 함수의 코드가 실행된다.
