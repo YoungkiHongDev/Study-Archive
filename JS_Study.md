@@ -129,7 +129,42 @@ html 태그에 자바스크립트 함수를 연결시키는 방법은 속성을 
         };
 </script>
 
+// HTML
 <button onclick="output()">버튼</button>
 ```
 
 예제와 같이 script 태그 안에 함수를 만들어 놓고, onclick과 같은 이벤트 속성을 사용하여 연결하면 함수를 원하는 때에 호출시킬 수 있다. 예제에서는 버튼을 클릭하면 함수가 호출되고 함수의 코드가 실행된다.
+
+# querySelector 데이터 참조
+```javascript
+<script>
+        const dateFormMaker = function() {
+            const inputYear = document.querySelector('#target-year-input').value;
+            const inputMonth = document.querySelector('#target-month-input').value;
+            const inputDay = document.querySelector('#target-day-input').value;
+            console.log(inputYear + "-" + inputMonth + "-" + inputDay);
+        };
+</script>
+
+// HTML
+<body>
+    <input id="target-year-input" class="target-input" />
+    <input id="target-month-input" class="target-input" />
+    <input id="target-day-input" class="target-input" />
+    <button onclick="dateFormMaker()">버튼</button>
+</body>
+```
+
+document 객체의 querySelector를 활용하면 HTML의 input 태그의 값을 가져올 수 있다.
+id값으로 가져올 경우 '#id' 형태로 매개변수를 주고 querySelector 뒤에 .value를 붙이면 값을 가져올 수 있다. 만약에, .value를 붙이지 않는다면 태그 자체를 가져오게 된다.
+
+# 날짜 정보 객체 Date
+Date는 날짜 정보를 담고 있는 객체로 우리가 원하는 시간대를 날짜 형식에 맞춘 데이터를 반환한다.
+예를들어, new Date() 라고 쓰면 현재 요일, 달, 일, 연도 같은 정보와 현재 시간까지 보여준다.
+현재가 2023년 10월 10일이고 기다리고 있는 날짜가 있으며, 그 날짜가 2023년 11월 10일이라고 가정한다면 목표 날짜를 담은 변수에서 현재 날짜를 담은 변수를 빼기하며 0.000초 단위로 얼마나 남았는지 나오게 된다. 그리고 그 값을 연산하여 남은 시간, 남은 분, 남은 초 등을 알 수 있다. 
+
+```javascript
+now = new Date()
+target = new Date('2023-11-10')
+console.log(now - target)
+```
