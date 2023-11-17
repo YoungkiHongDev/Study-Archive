@@ -45,7 +45,7 @@ html 파일의 head 부분 안에 style 태그를 추가하여 사용한다.
 </head>
 ```
 
-# CSS 기본 선택자
+# 기본 선택자
 CSS는 선택자로 html의 어디에 적용할 것인지 선택한다. 주로 태그, 아이디, 클래스를 선택자로 사용한다.
 
 1. 태그 선택자  
@@ -69,7 +69,7 @@ tag {
 }
 ```
 
-# CSS 자손 선택자
+# 자손 선택자
 기본 선택자는 3가지지만, 개발을 진행하면서 구조가 복잡해지면 html 태그 계층으로 부모와 자식이 나눠지는 것을 이용하여, 특정 요소에 css를 적용할 수 있다.
 
 ```html
@@ -87,3 +87,29 @@ tag {
 ```
 
 위와 같이 "공백"으로 선택자를 연결해 사용하면 부모인 div의 자식 중 특정 요소만 css를 적용할 수 있다.
+
+# 다중 선택자
+자손 선택자가 공백으로 선택자들을 연결해서 특정 자식 요소만 선택했다면, 다중 선택자는 공백없이 선택자들을 연결해서 선택자들을 모두 만족하는 요소를 선택한다.
+
+```html
+<body>
+    <div class="box">
+        <h1 class="contents" id="fontone">첫번째 컨텐츠</h1>
+        <h1 class="contents" id="fonttwo">두번째 컨텐츠</h1>
+    </div>
+</body>
+```
+```css
+.contents#fontone {
+    color: blue;
+}
+```
+
+위와 같은 예제에서는 contents 클래스이며, fontone 아이디를 가진 h1 태그에 css가 적용된다.
+
+# font 기본 속성
+- font-size: 폰트의 사이즈
+- font-weight: 폰트의 굵기
+- font-style: 폰트의 모양 ex) italic 값으로 기울기
+- text-decoration: 폰트에 선긋기 ex) underline 값으로 밑줄긋기
+- color: 폰트의 색상
