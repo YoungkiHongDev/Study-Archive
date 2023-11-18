@@ -1,8 +1,8 @@
 # Study-Archive
-스터디 파일 백업을 위한 깃허브 저장소입니다.
+학습 파일 백업을 위한 깃허브 저장소
 
-# Study Index
-1. [Total_CS_Study.md](Total_CS_Study.md)
+# 학습 목차
+## [Total_CS_Study.md](Total_CS_Study.md)
 
 - [데이터 표현과 교환](./Total_CS_Study.md#데이터-표현과-교환)
   - [데이터 포맷](./Total_CS_Study.md#데이터-포맷)
@@ -56,11 +56,11 @@
   - [리액트와 뷰](./Total_CS_Study.md#리액트와-뷰)
 
 
-2. [PastExam_CS_Study.md](PastExam_CS_Study.md)
-3. [Git_Study.md](Git_Study.md)
-4. [CSS_Study.md](CSS_Study.md)
-5. [JavaScript_Study.md](JavaScript_Study.md)
-6. [Java_Study.md](Java_Study.md)
-7. [Java_Cote_Study.md](Java_Cote_Study.md)
-8. [Spring_Study.md](Spring_Study.md)
-9. [Thymeleaf_Study.md](Thymeleaf_Study.md)
+## [PastExam_CS_Study.md](PastExam_CS_Study.md)
+## [Git_Study.md](Git_Study.md)
+## [CSS_Study.md](CSS_Study.md)
+## [JavaScript_Study.md](JavaScript_Study.md)
+## [Java_Study.md](Java_Study.md)
+## [Java_Cote_Study.md](Java_Cote_Study.md)
+## [Spring_Study.md](Spring_Study.md)
+## [Thymeleaf_Study.md](Thymeleaf_Study.md)
