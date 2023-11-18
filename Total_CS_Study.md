@@ -322,7 +322,7 @@ LinkedList는 밀어주는 작업 없이 노드만 연결시켜 주면 되므로
 
 
 # 라이브러리와 프레임워크
-## Mybatis와 JPA <a name="Mybatis와-JPA"></a>
+## Mybatis와 JPA <a name="mybatis와-jpa"></a>
 스프링(스프링부트)으로 개발할 때, 사용하는 데이터 엑세스 기술 중 대표적으로 사용하는 기술이 Mybatis, JPA이다.
 
 1. Mybatis
