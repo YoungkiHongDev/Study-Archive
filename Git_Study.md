@@ -8,16 +8,19 @@ VScode 확장으로 설치한다.
 왼쪽 사이드바 원 안에 줄기 아이콘으로 사용할 수 있다.  
 VScode 환경에서 변경사항, 브랜치, 리모트, 히스토리 등 Git을 편하게 확인할 수 있다.
 
+
 # Git 설정
 **git config --list** //깃 설정 목록 보기  
 **git config --global user.name [깃 유저명]** //깃 유저명 설정  
 **git config --global user.email [깃 이메일]** //깃 이메일 설정  
 **cat ~/.gitconfig** //깃 설정 한눈에 보기
 
+
 # Git 작업원리
 1. 개발자A가 Local Repository에서 작업
 2. 작업한 내용을 Commit & Push하여 Server Repository에 업로드
 3. 개발자B는 A가 작업한 소스를 Pull하여 Local Repository에 받아옴
+
 
 # Git 기본명령
 **git init** //깃 초기화  
@@ -28,12 +31,14 @@ VScode 환경에서 변경사항, 브랜치, 리모트, 히스토리 등 Git을 
 **git pull** //서버에서 받아오기  
 **git clone** //깃허브에 만든 저장소 클론하기
 
+
 # Git 커밋 옵션
 **git commit -m "메시지"** // 메시지를 남기는 옵션  
 **git commit -m "메시지1    
 메시지2     
 메시지3"** //커밋 메시지를 여러줄 쓰는 방법  
 **git commit -am "메시지"** //add & commit을 동시에 하는 옵션, 새로운 파일 추가할 때는 사용 불가능
+
 
 # origin이란?
 origin은 원격 저장소의 기본 이름이다.  
@@ -43,10 +48,12 @@ git remote add [이름] [주소]
 명령어에서 일반적으로 이름에 origin을 사용한다.  
 주소는 이름에 등록되어 주소를 일일히 칠 필요없이 origin만 사용 가능하다.
 
+
 # add & commit 3단계
 1. **working directory** :arrow_right: 소스를 작업하는 디렉터리, add시 staging area로 넘어감  
 2. **staging area** :arrow_right: 준비 태세 단계, commit시 git repository로 넘어감  
 3. **git repository** :arrow_right: 로컬 저장소, push시 server repository로 올라감  
+
 
 # conflicts 해결방법
 여럿이 같은 부분을 수정하면 충돌이 날 경우 다음과 같은 해결 방법들이 있다.
@@ -54,6 +61,7 @@ git remote add [이름] [주소]
 2. **수신 변경 사항 수락** :arrow_right: 다른 사람 코드만 수용
 3. **두 변경 사항 모두 수락** :arrow_right: 양쪽 코드를 모두 수용
 4. **직접 해결** :arrow_right: 자동으로 해결이 안될 경우 직접 코드를 수정
+
 
 # git flow & git issue 실습
 **실습 과정 기록**  
@@ -90,6 +98,7 @@ git flow를 초기화 한다.
 
 **10. Pull requests에 녹색 Merge pull request 나오면 성공이므로 merge하기**
 
+
 # git 내역조회
 **1. git status**  
 - git add로 staging한 파일들을 조회한다.
@@ -97,6 +106,7 @@ git flow를 초기화 한다.
 **2. git log --all --oneline**  
 git commit한 모든 내역을 한눈에 조회한다.
 **--graph** 옵션을 쓰면 시각적 효과 상승
+
 
 # git 커밋비교
 **1. git diff**  
@@ -119,6 +129,7 @@ H, J, K, L 키를 사용하여 커서 이동이 가능하다.
 **git config --global diff.tool vscode**  
 **git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'**  
 
+
 # Git 브랜치
 **git branch [브랜치명]**  
 브랜치 생성  
@@ -136,6 +147,7 @@ merge 안한 브랜치 삭제
 특정 브랜치와 병합, 충돌 해결 후 add & commit  
 
 **git push origin --delete [브랜치명]** //원격 저장소 브랜치 삭제
+
 
 # merge 다양한 방법
 > **3-way merge**
@@ -172,6 +184,7 @@ main 브랜치 로그만 볼 수 있도록 곁가지를 쳐내는 방법이다. 
 3. merge --squash
 4. 다른 브랜치의 commit을 잘라와서 main 브랜치에 붙이기
 
+
 # rebase & merge 차이점
 **merge**
 1. main 브랜치로 이동
@@ -182,6 +195,7 @@ main 브랜치 로그만 볼 수 있도록 곁가지를 쳐내는 방법이다. 
 2. git rebase main
 3. main 브랜치로 이동
 4. git merge [다른 브랜치명]
+
 
 # git 되돌리기
 ## git restore
@@ -233,6 +247,7 @@ A, B, C 커밋이 쌓여있고 C 커밋에서 B 커밋으로 돌아가고 싶을
 3. 소스를 rollback commit과 똑같이 수정
 4. push 하면 돌아가기 성공 (reject 당하면 -uf 옵션 또는 +브랜치로 push)
 
+
 # git 파일 삭제
 ```
 git rm [파일명]
@@ -249,17 +264,20 @@ git commit으로 파일 삭제에 대한 메시지를 남기고 git push로 작�
 git rm -r [디렉토리명]
 ```
 
+
 # git 파일 이름 변경
 ```
 git mv [원래 파일명] [바꿀 파일명]
 ```
 파일명이 변경이 안될 경우 한번도 git add 한 적이 없는 파일이므로 staging 후 수행하기
 
+
 # .gitignore 걸러진 파일 확인
 ```
 git status --ignored
 ```
 git bash 환경에서 사용 시 gitignore 내용에 따라 걸러진 파일들이 붉은색으로 보인다.
+
 
 # 마지막 커밋 메시지 변경
 ```
