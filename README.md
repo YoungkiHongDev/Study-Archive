@@ -50,10 +50,10 @@
   - [대용량 트래픽 처리를 위한 서버 확장](./Total_CS_Study.md#대용량-트래픽-처리를-위한-서버-확장)
 
 - [라이브러리와 프레임워크](./Total_CS_Study.md#라이브러리와-프레임워크)
-  - [Mybatis & JPA](./Total_CS_Study.md#mybatis--%26-jpa)
+  - [Mybatis와 JPA](./Total_CS_Study.md#mybatis와-jpa)
   - [라이브러리](./Total_CS_Study.md#라이브러리)
   - [프레임워크](./Total_CS_Study.md#프레임워크)
-  - [리액트 & 뷰](./Total_CS_Study.md#리액트--%26-뷰)
+  - [리액트와 뷰](./Total_CS_Study.md#리액트와-뷰)
 
 
 2. [PastExam_CS_Study.md](PastExam_CS_Study.md)
