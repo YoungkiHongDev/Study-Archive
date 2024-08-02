@@ -5,7 +5,6 @@
 
 ### 프로그래밍 언어
 - [Java Cote Study](programming/Java_Cote_Study.md)
-- [Java Starter Study](programming/Java_Starter_Study.md)
 - [Java Study](programming/Java_Study.md)
 - [JavaScript Study](programming/JavaScript_Study.md)
 
